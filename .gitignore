@@ -130,3 +130,8 @@ dmypy.json
 
 # PDF
 *.pdf
+
+#GIT
+*.iml
+*xml
+
