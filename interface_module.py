@@ -9,12 +9,9 @@ import re
 class Application(Frame):
 
 
-
-
-
-
     def __init__(self, master=None):
-        self.www=str()
+
+
         super().__init__(master)
         self.master = master
 
@@ -49,7 +46,7 @@ class Application(Frame):
         self.mass_frame()
         self.group_various()
         self.print()
-
+        self.aaa()
 
 
 
@@ -607,6 +604,7 @@ class Application(Frame):
         self.class_pre_filter_02_exhaust()
         self.size_pre_filter_02_exhaust()
         self.quantity_pre_filter_02_exhaust()
+        self.aaa()
 
     #######################################################################################################################
 
@@ -1264,6 +1262,9 @@ class Application(Frame):
         #
         #
 
+    def  aaa(self):
+
+        self.value_project_no.set(2)
 
 
 

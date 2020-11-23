@@ -47,27 +47,34 @@ def blade_runner():
             page_interpreter.process_page(page)
             lista = fake_file_handle.getvalue() #z pdf
 
-
-    for pattern in get_data_module.get_data():
+    word_01_list = []
+    word_02_list = []
+    for i , pattern  in enumerate(get_data_module.get_data()):
         #print(f'Słowa kluczowe:{pattern}')
         pattern_parameter_object = (re.finditer(pattern, lista, re.IGNORECASE))
-        print('##########################################')
-        print(pattern_parameter_object)
-        a=pattern_parameter_object.__next__()
-        print (a.span())
-        print (a)
-        b = pattern_parameter_object.__next__()
-        print(b.span())
-        print(b)
+
+        parameter_01=pattern_parameter_object.__next__()
+
+        word_01= lista[parameter_01.span()[0]:parameter_01.span()[1]]
 
 
-        # pattern_parameter=pattern_parameter_object.span()   # współrzędne 1-go znalezionego wzoru
-        # print (pattern_parameter)
-        # print(lista[pattern_parameter[0]:pattern_parameter[1]])
-   #     lista_a = list(a)
-   #     score.append(lista_a)
+        word_01_list.append(word_01)
 
-   #
+        parameter_02 = pattern_parameter_object.__next__()
+
+        word_02 = lista[parameter_02.span()[0]:parameter_02.span()[1]]
+
+        word_02_list.append(word_02)
+
+
+    return word_01_list,word_02_list    # solution list first-cought word,  # solution list second-cought word
+
+
+
+  # współrzędne 1-go znalezionego wzoru
+
+
+
    #  score = str(score)
    #  score = score.replace(']','').replace('[', '')
    #  score = score.split('>, <')
@@ -84,6 +91,7 @@ def blade_runner():
 #       print (result)
 
 # probe_1.5
+
 
 
 
