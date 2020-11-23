@@ -83,8 +83,7 @@ def blade_runner():
 #        result = re.findall(pattern,string,flags=re.IGNORECASE)
 #       print (result)
 
-prob 1
-
+# probe_1
 
 
 
