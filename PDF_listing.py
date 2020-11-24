@@ -268,7 +268,9 @@ def info():
 
 
 
+def spread(self):
 
+    return self
 
 
 

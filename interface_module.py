@@ -2,6 +2,9 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import inspect
+from search_module import *
+
+
 
 
 import re
@@ -46,7 +49,7 @@ class Application(Frame):
         self.mass_frame()
         self.group_various()
         self.print()
-        self.aaa()
+        self.data_assign()
 
 
 
@@ -604,7 +607,7 @@ class Application(Frame):
         self.class_pre_filter_02_exhaust()
         self.size_pre_filter_02_exhaust()
         self.quantity_pre_filter_02_exhaust()
-        self.aaa()
+
 
     #######################################################################################################################
 
@@ -1262,11 +1265,23 @@ class Application(Frame):
         #
         #
 
-    def  aaa(self):
 
-        self.value_project_no.set(2)
+    def data_assign(self):
 
+         print (blade_runner())
+         setattr(self,'value_project_no',blade_runner()[1][1])
 
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_order_no.set (blade_runner()[1][1])
+        #
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_project_no.set(blade_runner()[1][1])
+        # self.value_project_no.set(blade_runner()[1][1])
+        #
 
 
 #########################################################################################################################
