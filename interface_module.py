@@ -57,6 +57,7 @@ class Application(Frame):
 
     def order(self,X=0,Y=10):
         self.value_order_no = StringVar()
+        self.value_order_no.set(word()[1])
 
         self.entry_order = ttk.Entry(self.lframe_identity, textvariable=self.value_order_no).grid(column=X, row=Y,padx=10)
 
@@ -66,6 +67,7 @@ class Application(Frame):
     def serial_number(self,X=20,Y=10):
 
         self.value_se_num = StringVar()
+        self.value_se_num.set(word()[2])
 
         self.entry_se_num = ttk.Entry(self.lframe_identity, textvariable=self.value_se_num).grid(column = X,row = Y , padx=10 )
 
@@ -1249,6 +1251,10 @@ class Application(Frame):
 
     def get_method_SV(self):
         self.print_value_project_no = self.value_project_no.get()
+        self.print_value_order_no = self.value_order_no.get()
+        self.print_value_se_num = self.value_se_num.get()
+
+
 
 
 
