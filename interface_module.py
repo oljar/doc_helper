@@ -2,21 +2,19 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import inspect
-
+from get_data_module import get_data as word
 
 import re
+
 
 class Application(Frame):
 
 
     def __init__(self, master=None):
 
-
         super().__init__(master)
         self.master = master
-
         self.pack()
-
         self.identity_frame()
         self.supply_frame()
         self.exhaust_frame()
@@ -24,16 +22,12 @@ class Application(Frame):
         self.cooler_frame()
         self.vent_exhaust_frame()
         self.vent_supply_frame()
-
-
         self.pre_filter_supply_01_frame()
         self.pre_filter_supply_02_frame()
         self.second_filter_supply_01_frame()
         self.second_filter_supply_02_frame()
         self.third_filter_supply_01_frame()
         self.third_filter_supply_02_frame()
-
-
         self.pre_filter_exhaust_01_frame()
         self.pre_filter_exhaust_02_frame()
         self.second_filter_exhaust_01_frame()
@@ -42,11 +36,9 @@ class Application(Frame):
         self.third_filter_exhaust_02_frame()
         self.counterflow_frame()
         self.heat_rec_frame()
-
         self.mass_frame()
         self.group_various()
         self.print()
-        self.aaa()
 
 
 
@@ -58,6 +50,7 @@ class Application(Frame):
     def project(self,X=0,Y=1):
 
         self.value_project_no = StringVar()
+        self.value_project_no.set(word()[0])
         self.entry_project = ttk.Entry(self.lframe_identity, textvariable=self.value_project_no).grid(column=X, row=Y )
         self.lba_identity(X,Y,txt="Symbol projektu")
 
@@ -604,7 +597,7 @@ class Application(Frame):
         self.class_pre_filter_02_exhaust()
         self.size_pre_filter_02_exhaust()
         self.quantity_pre_filter_02_exhaust()
-        self.aaa()
+
 
     #######################################################################################################################
 
@@ -1254,22 +1247,15 @@ class Application(Frame):
         print (len(collect))
 
 
-        # target = re.compile(r'value',re.IGNORECASE)
-        #
-        # collect = re.finditer(target, all_attribute )
-        # for a in collect :
-        #     print (a)
-        #
-        #
-
-    def  aaa(self):
-
-        self.value_project_no.set(2)
+    def get_method_SV(self):
+        self.print_value_project_no = self.value_project_no.get()
 
 
 
 
-#########################################################################################################################
+
+######################################################################################################################
+
 root = Tk()
 root.title("DocHelper")
 root.geometry("750x600")
