@@ -2,17 +2,10 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import inspect
-<<<<<<< HEAD
 from get_data_module import get_data as word
-=======
 from search_module import *
-
-
-
->>>>>>> 4eda519f8552a6787368eba0fd822e17d74fdbcd
-
 import re
-
+#
 
 class Application(Frame):
 
@@ -46,11 +39,6 @@ class Application(Frame):
         self.mass_frame()
         self.group_various()
         self.print()
-<<<<<<< HEAD
-=======
-        self.data_assign()
->>>>>>> 4eda519f8552a6787368eba0fd822e17d74fdbcd
-
 
 
 
@@ -78,7 +66,7 @@ class Application(Frame):
     def serial_number(self,X=20,Y=10):
 
         self.value_se_num = StringVar()
-        self.value_se_num.set(word()[2])
+#        self.value_se_num.set(word()[2])
 
         self.entry_se_num = ttk.Entry(self.lframe_identity, textvariable=self.value_se_num).grid(column = X,row = Y , padx=10 )
 
@@ -1266,25 +1254,6 @@ class Application(Frame):
         self.print_value_se_num = self.value_se_num.get()
 
 
-<<<<<<< HEAD
-=======
-    def data_assign(self):
->>>>>>> 4eda519f8552a6787368eba0fd822e17d74fdbcd
-
-         print (blade_runner())
-         setattr(self,'value_project_no',blade_runner()[1][1])
-
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_order_no.set (blade_runner()[1][1])
-        #
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_project_no.set(blade_runner()[1][1])
-        # self.value_project_no.set(blade_runner()[1][1])
-        #
 
 
 
