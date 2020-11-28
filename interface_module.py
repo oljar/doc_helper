@@ -39,6 +39,7 @@ class Application(Frame):
         self.mass_frame()
         self.group_various()
         self.print()
+        self.print_2()
 
 
 
@@ -89,7 +90,7 @@ class Application(Frame):
 
         self.value_system_symbol = StringVar()
 
-        self.value_model_symbol.set(word()[4])
+        self.value_system_symbol.set(word()[4])
 
         self.entry_system = ttk.Entry(self.lframe_identity, textvariable=self.value_system_symbol).grid(column=X, row=Y, padx=10 )
 
@@ -121,11 +122,11 @@ class Application(Frame):
 
     def performance_supply(self,X=0,Y=0):
 
-        self.value_perf_supply = StringVar()
+        self.value_supply_symbol = StringVar()
 
-        self.value_perf_supply.set(word()[5])
+        self.value_supply_symbol.set(word()[5])
 
-        self.entry_perf_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_perf_supply).grid(column=X, row=Y, padx=10 )
+        self.entry_perf_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_supply_symbol).grid(column=X, row=Y, padx=10)
 
         self.lba_supply(X, Y, txt="Wykonanie - symbol")
 
@@ -168,9 +169,9 @@ class Application(Frame):
 
     def type_vent_supply(self, X=0, Y=0):
 
-        self.value_supply = StringVar()
-        self.value_supply.set(word()[8])
-        self.entry_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_supply).grid(column=X, row=Y, padx=10)
+        self.value_vent_supply_symbol = StringVar()
+        self.value_vent_supply_symbol.set(word()[8])
+        self.entry_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_vent_supply_symbol).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Symbol")
 
 
@@ -455,18 +456,18 @@ class Application(Frame):
 
     def performance_exhaust(self,X=0,Y=0):
 
-        self.value_perf_exhaust = StringVar()
-        self.value_perf_exhaust.set(word()[38])
-        self.entry_perf_exhaust = ttk.Entry(self.lframe_exhaust, textvariable=self.value_perf_exhaust).grid(column=X, row=Y, padx=10)
+        self.value_exhaust_symbol = StringVar()
+        self.value_exhaust_symbol.set(word()[38])
+        self.entry_perf_exhaust = ttk.Entry(self.lframe_exhaust, textvariable=self.value_exhaust_symbol).grid(column=X, row=Y, padx=10)
         self.lba_exhaust(X, Y, txt="Wykonanie - symbol")
 
-
+#textvariable=self.value_output_exhaust
 
     def output_exhaust(self,X=10,Y=0):
 
         self.value_output_exhaust = StringVar()
         self.value_output_exhaust.set(word()[39])
-        self.entry_output_exhaust = ttk.Entry(self.lframe_exhaust, textvariable=self.value_output_exhaust).grid(column=X, row=Y)
+        self.entry_output_exhaust = ttk.Entry(self.lframe_exhaust,textvariable=self.value_output_exhaust ).grid(column=X, row=Y)
         self.lba_exhaust(X, Y, txt="Wydatek [m3/h]")
 
 
@@ -494,9 +495,9 @@ class Application(Frame):
         return ttk.Label(self.lframe_vent_exhasut, text=txt).grid(column=X, row=Y + 1, pady=(1, 10), padx=10, sticky=W)
 
     def type_vent_exhaust(self, X=0, Y=0):
-        self.value_perf_exhaust = StringVar()
-        self.value_perf_exhaust.set(word()[41])
-        self.entry_perf_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_perf_exhaust).grid(column=X, row=Y, padx=10)
+        self.value_vent_exhaust_symbol = StringVar()
+        self.value_vent_exhaust_symbol.set(word()[41])
+        self.entry_perf_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_vent_exhaust_symbol).grid(column=X, row=Y, padx=10)
         self.lba_vent_exhaust(X, Y+10, txt="Symbol" )
 
     def power_vent_exhaust(self, X=0, Y=20):
@@ -878,42 +879,37 @@ class Application(Frame):
 
 
     def cooler_symbol (self, X=0, Y=0):
-        self.cooler_symbol_value = StringVar()
-
-        self.entry_cooler_symbol = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_symbol_value).grid(column=X, row=Y,padx=10, sticky=W)
+        self.value_cooler_symbol = StringVar()
+        self.value_cooler_symbol.set(word()[83])
+        self.entry_cooler_symbol = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_symbol).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_cooler(X,Y,"Symbol")
 
 
     def cooler_water(self,X=0,Y=3):
 
-        self.cooler_water_value_in = StringVar()
-#
-        self.entry_cooler_water_in = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_water_value_in).grid(column=X, row=Y,padx=10, sticky=W)
-
+        self.value_cooler_water_in = StringVar()
+        self.value_cooler_water_in.set(word()[84])
+        self.entry_cooler_water_in = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_in).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_cooler(X, Y-2, "Wodna")
-
         self.lba_cooler(X, Y+1, "Temp. zasil. czynnika [°C]")
 
 
-        self.cooler_water_value_out_value = StringVar()
-
-        self.entry_cooler_water_out = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_water_value_out_value).grid(column=X, row=Y+3,padx=10, sticky=W)
-
+        self.value_cooler_water_out = StringVar()
+        self.value_cooler_water_out.set(word()[85])
+        self.entry_cooler_water_out = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_out).grid(column=X, row=Y + 3, padx=10, sticky=W)
         self.lba_cooler(X, Y+3, "Temp. powr. czynnika [°C]")
 
     #
-        self.cooler_water_power_value = StringVar()
-
-        self.entry_cooler_water_power = ttk.Entry(self.lframe_cooler,textvariable=self.cooler_water_power_value).grid(column=X, row=Y+6,padx=10, sticky=W)
-
+        self.value_cooler_water_power = StringVar()
+        self.value_cooler_water_power.set(word()[86])
+        self.entry_cooler_water_power = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_power).grid(column=X, row=Y + 6, padx=10, sticky=W)
         self.lba_cooler(X, Y + 6, "Moc lato [kW]")
 
     #
 
-        self.cooler_water_pressure_loss_value = StringVar()
-
-        self.entry_pressure_loss = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_water_pressure_loss_value).grid(column=X, row=Y + 9, padx=10, sticky=W)
-
+        self.value_cooler_water_pressure_loss = StringVar()
+        self.value_cooler_water_pressure_loss.set(word()[87])
+        self.entry_pressure_loss = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_pressure_loss).grid(column=X, row=Y + 9, padx=10, sticky=W)
         self.lba_cooler(X, Y + 9, " Opór hydrauliczny [kPa]")
 #
 
@@ -924,20 +920,21 @@ class Application(Frame):
 
     def cooler_freon(self,X=30,Y=3):
 
-        self.cooler_freon_refrig_value = StringVar()
-
-        self.entry_cooler_freon_refrig = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_freon_refrig_value).grid(column=X, row=Y, padx=10, sticky=W)
+        self.value_cooler_freon_refrig = StringVar()
+        self.value_cooler_freon_refrig.set(word()[88])
+        self.entry_cooler_freon_refrig = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_freon_refrig).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_cooler(X, Y - 2, "Freonowa")
         self.lba_cooler(X, Y +1, "Rodzaj czynnika")
 
 #
-        self.cooler_freon_power_value = StringVar()
-        self.entry_cooler_freon_refrig = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_freon_power_value).grid(column=X, row=Y+3, padx=10, sticky=W)
+        self.value_cooler_freon_power = StringVar()
+        self.value_cooler_freon_power.set(word()[89])
+        self.entry_cooler_freon_refrig = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_freon_power).grid(column=X, row=Y + 3, padx=10, sticky=W)
         self.lba_cooler(X, Y + 3, "Moc chłodnicy - lato [kW]")
 #
-
-        self.cooler_freon_pressure_loss_value = StringVar()
-        self.entry_cooler_freon_pressure_loss = ttk.Entry(self.lframe_cooler, textvariable=self.cooler_freon_pressure_loss_value).grid(column=X, row=Y+6, padx=10, sticky=W)
+        self.value_cooler_freon_pressure_loss = StringVar()
+        self.value_cooler_freon_pressure_loss.set(word()[90])
+        self.entry_cooler_freon_pressure_loss = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_freon_pressure_loss).grid(column=X, row=Y + 6, padx=10, sticky=W)
         self.lba_cooler(X, Y + 6, "Opór hydrauliczny [kPa]")
 
 
@@ -959,9 +956,8 @@ class Application(Frame):
 
     def heat_recovery_symbol(self, X=0, Y=0):
         self.heat_recovery_value = StringVar()
-
+        self.heat_recovery_value.set(word()[91])
         self.entry_heat_recovery_symbol = ttk.Entry(self.lframe_counter, textvariable=self.heat_recovery_value).grid(column=X, row=Y, padx=10, sticky=W)
-
         self.lba_heat_recovery(X, Y, "Symbol")
 
 
@@ -979,41 +975,39 @@ class Application(Frame):
 
     def glicol_symbol_motor_typ(self,X=0, Y=10):
 
-        self.glicol_symbol_motor_typ_value=StringVar()
+        self.value_glicol_symbol_motor_typ=StringVar()
+        self.value_glicol_symbol_motor_typ.set(word()[92])
 
-        self.entry_glicol_motor_typ = ttk.Entry(self.lframe_heat_rec, textvariable=self.glicol_symbol_motor_typ_value).grid(column=X, row=Y, padx=10, sticky=W)
+        self.entry_glicol_motor_typ = ttk.Entry(self.lframe_heat_rec, textvariable=self.value_glicol_symbol_motor_typ).grid(column=X, row=Y, padx=10, sticky=W)
 
         self.lba_heat_rec(X, Y, "Sym. pompy siln. odzysku")
 
     def glicol_symbol_motor_pwr(self, X=0, Y=30):
 
-        self.glicol_motor_pwr_value = StringVar()
-
-        self.entry_glicol_motor_pwr = ttk.Entry(self.lframe_heat_rec, textvariable=self.glicol_motor_pwr_value).grid(column=X, row=Y, padx=10, sticky=W)
+        self.value_glicol_motor_pwr = StringVar()
+        self.value_glicol_motor_pwr.set(word()[93])
+        self.entry_glicol_motor_pwr = ttk.Entry(self.lframe_heat_rec, textvariable=self.value_glicol_motor_pwr).grid(column=X, row=Y, padx=10, sticky=W)
 
         self.lba_heat_rec(X, Y, "Moc sil. p-y glikolu [kW]")
 
 
     def glicol_symbol_motor_voltage(self, X=0, Y=60):
-        self.glicol_motor_voltage_value = StringVar()
-
-        self.entry_glicol_motor_voltage = ttk.Entry(self.lframe_heat_rec, textvariable=self.glicol_motor_voltage_value).grid(column=X, row=Y, padx=10, sticky=W)
-
+        self.value_glicol_motor_voltage = StringVar()
+        self.value_glicol_motor_voltage.set(word()[94])
+        self.entry_glicol_motor_voltage = ttk.Entry(self.lframe_heat_rec, textvariable=self.value_glicol_motor_voltage).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_rec(X, Y, "Napięcie zas. pompy [V]")
 
     def rotor_exchanger_symbol_motor_pwr(self, X=20, Y=30):
-        self_rotor_exchanger_motor_pwr_value = StringVar()
-        self.entry_rotor_exchanger_motor_pwr = ttk.Entry(self.lframe_heat_rec,
-                                                         textvariable=self_rotor_exchanger_motor_pwr_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
+        self.value_rotor_exchanger_motor_pwr = StringVar()
+        self.value_rotor_exchanger_motor_pwr.set(word()[95])
+        self.entry_rotor_exchanger_motor_pwr = ttk.Entry(self.lframe_heat_rec,textvariable=self.value_rotor_exchanger_motor_pwr).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_rec(X, Y, "Moc sil. wym. obr. [kW]")
 
 
     def rotor_exchanger_symbol_motor_voltage(self, X=20, Y=60):
-        self_rotor_exchanger_motor_voltage_value = StringVar()
-        self.entry_rotor_exchanger_motor_voltage = ttk.Entry(self.lframe_heat_rec,
-                                                             textvariable=self_rotor_exchanger_motor_voltage_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
+        self.value_rotor_exchanger_motor_voltage = StringVar()
+        self.value_rotor_exchanger_motor_voltage.set(word()[96])
+        self.entry_rotor_exchanger_motor_voltage = ttk.Entry(self.lframe_heat_rec,textvariable=self.value_rotor_exchanger_motor_voltage).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_rec(X, Y, "Napięcie zas. silnika wym .obr. [V]")
 
 
@@ -1039,24 +1033,27 @@ class Application(Frame):
 
     def type_aggregat(self, X=0, Y=0):
         self.value_aggregat_typ = StringVar()
+        self.value_aggregat_typ.set(word()[97])
         self.entry_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_aggregat_typ).grid(column=X, row=Y, padx=10)
-
         self.lba_aggregat(X, Y + 10, txt="Symbol")
 
 
     def voltage_aggregat(self, X=0, Y=20):
         self.value_voltage_aggregat = StringVar()
+        self.value_voltage_aggregat.set(word()[98])
         self.entry_voltage_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_voltage_aggregat).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Napięcie zasilania[V]")
 
 
     def start_current_aggregat(self, X=0, Y=40):
         self.value_start_current_aggregat = StringVar()
+        self.value_start_current_aggregat.set(word()[99])
         self.entry_start_current_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_start_current_aggregat).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Prąd rozruchu[A]")
 
     def max_current_aggregat(self, X=0, Y=60):
         self.value_max_current_aggregat = StringVar()
+        self.value_max_current_aggregat.set(word()[100])
         self.entry_max_current_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_max_current_aggregat).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Max prąd [A]")
 
@@ -1080,37 +1077,28 @@ class Application(Frame):
 
 
     def humidifier_typ(self, X=0, Y=10):
-        self.humidifier_typ_value = StringVar()
-
-        self.entry_humidifier_typ = ttk.Entry(self.lframe_humidifier, textvariable=self.humidifier_typ_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
-
+        self.value_humidifier_typ = StringVar()
+        self.value_humidifier_typ.set(word()[101])
+        self.entry_humidifier_typ = ttk.Entry(self.lframe_humidifier, textvariable=self.value_humidifier_typ).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Symbol")
 
 
     def humidifier_outgo(self, X=0, Y=20):
-        self.humidifier_outgo_value = StringVar()
-
-        self.entry_humidifier_outgo = ttk.Entry(self.lframe_humidifier, textvariable=self.humidifier_outgo_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
-
+        self.value_humidifier_outgo = StringVar()
+        self.value_humidifier_outgo.set(word()[102])
+        self.entry_humidifier_outgo = ttk.Entry(self.lframe_humidifier, textvariable=self.value_humidifier_outgo).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Wydajność [kg/h]")
 
     def humidifier_pwr(self, X=0, Y=30):
-        self.humidifier_pwr_value = StringVar()
-
-        self.entry_humidifier_pwr = ttk.Entry(self.lframe_humidifier, textvariable=self.humidifier_pwr_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
-
+        self.value_humidifier_pwr = StringVar()
+        self.value_humidifier_pwr.set(word()[103])
+        self.entry_humidifier_pwr = ttk.Entry(self.lframe_humidifier, textvariable=self.value_humidifier_pwr).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Moc [kW]")
 
     def humidifier_voltage(self, X=0, Y=60):
-        self.humidifier_voltage_value = StringVar()
-
-        self.entry_humidifier_voltage = ttk.Entry(self.lframe_humidifier,
-                                                  textvariable=self.humidifier_voltage_value).grid(column=X, row=Y,
-                                                                                                   padx=10, sticky=W)
-
+        self.value_humidifier_voltage = StringVar()
+        self.value_humidifier_voltage.set(word()[104])
+        self.entry_humidifier_voltage = ttk.Entry(self.lframe_humidifier,textvariable=self.value_humidifier_voltage).grid(column=X, row=Y,padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Napięcie zasilania [V]")
 
 
@@ -1118,7 +1106,6 @@ class Application(Frame):
     def humidifier_frame(self):
         self.lframe_humidifier = ttk.LabelFrame(tab_9, text="Nawilżacz")
         self.lframe_humidifier.pack(side = LEFT, expand = True, fill = X)
-
         self.humidifier_pwr()
         self.humidifier_voltage()
         self.humidifier_typ()
@@ -1133,36 +1120,28 @@ class Application(Frame):
 
 
     def humidifier_pump_typ(self, X=0, Y=10):
-        self.humidifier_pump_typ_value = StringVar()
-
-        self.entry_humidifier_pump_typ = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.humidifier_pump_typ_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
-
+        self.value_humidifier_pump_typ = StringVar()
+        self.value_humidifier_pump_typ.set(word()[105])
+        self.entry_humidifier_pump_typ = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.value_humidifier_pump_typ).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier_pump(X, Y, "Symbol")
 
 
     def humidifier_pump_current(self, X=0, Y=20):
-        self.humidifier_pump_current_value = StringVar()
-
-        self.entry_humidifier_pump_current = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.humidifier_pump_current_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
-
+        self.value_humidifier_pump_current = StringVar()
+        self.value_humidifier_pump_current.set(word()[106])
+        self.entry_humidifier_pump_current = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.value_humidifier_pump_current).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier_pump(X, Y, "Prąd [A]]")
 
     def humidifier_pump_pwr(self, X=0, Y=30):
-        self.humidifier_pump_pwr_value = StringVar()
-
-        self.entry_humidifier_pump_pwr = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.humidifier_pump_pwr_value).grid(
-            column=X, row=Y, padx=10, sticky=W)
-
+        self.value_humidifier_pump_pwr = StringVar()
+        self.value_humidifier_pump_pwr.set(word()[107])
+        self.entry_humidifier_pump_pwr = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.value_humidifier_pump_pwr).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier_pump(X, Y, "Moc [kW]")
 
     def humidifier_pump_voltage(self, X=0, Y=60):
-        self.humidifier_pump_voltage_value = StringVar()
-
-        self.entry_humidifier_pump_voltage = ttk.Entry(self.lframe_humidifier_pump,
-                                                  textvariable=self.humidifier_pump_voltage_value).grid(column=X, row=Y,
-                                                                                                   padx=10, sticky=W)
+        self.value_humidifier_pump_voltage = StringVar()
+        self.value_humidifier_pump_voltage.set(word()[108])
+        self.entry_humidifier_pump_voltage = ttk.Entry(self.lframe_humidifier_pump,textvariable=self.value_humidifier_pump_voltage).grid(column=X, row=Y,padx=10, sticky=W)
 
         self.lba_humidifier_pump(X, Y, "Napięcie zasilania [V]")
 
@@ -1186,13 +1165,11 @@ class Application(Frame):
 
     def mass(self, X=0, Y=10):
         self.lba_mass(X, Y, "masa [kg]")
-        self.mass_value = StringVar()
-
-        self.entry_mass = ttk.Entry(self.lframe_mass, textvariable=self.mass_value).grid(
-             column=X, row=Y, padx=10, sticky=W)
+        self.value_mass = StringVar()
+        self.value_mass.set(word()[109])
+        self.entry_mass = ttk.Entry(self.lframe_mass, textvariable=self.value_mass).grid(column=X, row=Y, padx=10, sticky=W)
 
     def mass_frame(self):
-
         self.lframe_mass = ttk.LabelFrame(tab_9, text="Masa")
         self.lframe_mass.pack(side = BOTTOM,fill=X ,expand = TRUE)
         self.mass()
@@ -1226,8 +1203,10 @@ class Application(Frame):
         self.print_value_model_symbol = self.value_model_symbol.get()
 
 
-
-
+    def print_2 (self):
+        # for i in range(len(word())):
+        #     print(word()[i])
+        print (word()[38])
 
 
     ######################################################################################################################
