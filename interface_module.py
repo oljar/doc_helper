@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import inspect
-from get_data_module import get_data as word
+from search_module import blade_runner as word
 from search_module import *
 import re
 #
@@ -40,7 +40,7 @@ class Application(Frame):
         self.heat_rec_frame()
         self.mass_frame()
         self.group_various()
-        self.print()
+      #  self.print()
         self.get_method_SV()
         self.print_2()
 
@@ -53,7 +53,7 @@ class Application(Frame):
     def project(self,X=0,Y=1):
 
         self.value_project_no = StringVar()
-        self.value_project_no.set(word()[0])
+        self.value_project_no.set(word()[0][0])
         self.entry_project = ttk.Entry(self.lframe_identity, textvariable=self.value_project_no).grid(column=X, row=Y )
         self.lba_identity(X,Y,txt="Symbol projektu")
 
@@ -1301,8 +1301,8 @@ class Application(Frame):
         # for i in range(len(word())):
         #     print(word()[i])
 
-        print(self.export_mass)
 
+        print (type(word))
 
 
     ######################################################################################################################

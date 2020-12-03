@@ -66,6 +66,8 @@ def blade_runner():
 
         word_02_list.append(word_02)
 
+    print (word_01)
+    print (word_02)
 
     return word_01_list,word_02_list    # solution list first-cought word,  # solution list second-cought word
 
