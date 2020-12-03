@@ -49,7 +49,7 @@ def blade_runner():
 
     word_01_list = []
     word_02_list = []
-    for i , pattern  in enumerate(get_data_module.get_data()):
+    for  pattern  in get_data_module.get_data():
         #print(f'Słowa kluczowe:{pattern}')
         pattern_parameter_object = (re.finditer(pattern, lista, re.IGNORECASE))
 
@@ -57,17 +57,19 @@ def blade_runner():
 
         word_01= lista[parameter_01.span()[0]:parameter_01.span()[1]]
 
-
         word_01_list.append(word_01)
 
         parameter_02 = pattern_parameter_object.__next__()
 
+
+
         word_02 = lista[parameter_02.span()[0]:parameter_02.span()[1]]
+
 
         word_02_list.append(word_02)
 
-    print (word_01)
-    print (word_02)
+    print (word_01_list)
+  #  print (word_02_list)
 
     return word_01_list,word_02_list    # solution list first-cought word,  # solution list second-cought word
 

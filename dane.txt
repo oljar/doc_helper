@@ -1,1 +1,1 @@
-compact_standardNUMER;rozwiązaniamiprzedstawionymi;
+(?<=oznaczenie projektowe:)..................................;(?<=zima).................................;
