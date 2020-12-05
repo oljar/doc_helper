@@ -53,7 +53,7 @@ class Application(Frame):
     def project(self,X=0,Y=1):
 
         self.value_project_no = StringVar()
-        self.value_project_no.set(word()[0][0])
+        self.value_project_no.set(word()[0])
         self.entry_project = ttk.Entry(self.lframe_identity, textvariable=self.value_project_no).grid(column=X, row=Y )
         self.lba_identity(X,Y,txt="Symbol projektu")
 

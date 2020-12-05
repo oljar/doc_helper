@@ -10,14 +10,16 @@ def get_data() :
 
 
     for a in (LabList):
-
+       #
+       if a == '\n':
+            continue
        if a == ';':
            wordList.append(word)
            word=''
            continue
        word += a
-
     return (wordList)
+
 
 if __name__ =='__main__':
 
