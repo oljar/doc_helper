@@ -64,7 +64,7 @@ def blade_runner():
     return word_01_list   # solution list first-cought word,  # solution list second-cought word
 
 
-
+# (?<=Typ).+?(?=<Wielkość)
 
 if __name__ == '__main__':
 
