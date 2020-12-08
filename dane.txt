@@ -1,9 +1,9 @@
 (?<=Projekt:)K{1}-[\d]{4}-[\d]{2}-[\d]{6};
 ;
 ;
-(?<=Typ)[\w]+-\w;
+(?<=Nazwa centrali: Klimor )[\w]+-\w\s?(COMPACT)?\s?(\d{4})?;
 ;
-(?<=zima).................................;
+((?<=Nazwa centrali: Klimor )[\w]+-\w\s?);
 (?<=oznaczenie projektowe:)..................................;
 (?<=zima).................................;
 (?<=oznaczenie projektowe:)..................................;
