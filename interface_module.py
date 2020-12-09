@@ -53,14 +53,14 @@ class Application(Frame):
     def project(self,X=0,Y=1):
 
         self.value_project_no = StringVar()
-        self.value_project_no.set(word()[0])
+        self.value_project_no.set(word()[0] + word()[1] + word()[2])
         self.entry_project = ttk.Entry(self.lframe_identity, textvariable=self.value_project_no).grid(column=X, row=Y )
         self.lba_identity(X,Y,txt="Symbol projektu")
 
 
     def order(self,X=0,Y=10):
         self.value_order_no = StringVar()
-        self.value_order_no.set(word()[1])
+        self.value_order_no.set(word()[3] + word()[4] + word()[5])
 
         self.entry_order = ttk.Entry(self.lframe_identity, textvariable=self.value_order_no).grid(column=X, row=Y,padx=10)
 
@@ -70,7 +70,7 @@ class Application(Frame):
     def serial_number(self,X=20,Y=10):
 
         self.value_se_num = StringVar()
-        self.value_se_num.set(word()[2])
+        self.value_se_num.set(word()[6]+word()[7]+word()[8])
 
         self.entry_se_num = ttk.Entry(self.lframe_identity, textvariable=self.value_se_num).grid(column = X,row = Y , padx=10 )
 
@@ -81,7 +81,7 @@ class Application(Frame):
 
         self.value_model_symbol = StringVar()
 
-        self.value_model_symbol.set(word()[3])
+        self.value_model_symbol.set(word()[9]+word()[10]+word()[11])
 
         self.entry_model = ttk.Entry(self.lframe_identity, textvariable=self.value_model_symbol).grid(column=X, row=Y, padx=10 )
 
@@ -93,13 +93,11 @@ class Application(Frame):
 
         self.value_system_symbol = StringVar()
 
-        self.value_system_symbol.set(word()[4])
+        self.value_system_symbol.set(word()[12]+word()[13]+word()[14])
 
         self.entry_system = ttk.Entry(self.lframe_identity, textvariable=self.value_system_symbol).grid(column=X, row=Y, padx=10 )
 
         self.lba_identity(X, Y, txt="System")
-
-
 
 
 
@@ -127,7 +125,7 @@ class Application(Frame):
 
         self.value_supply_symbol = StringVar()
 
-        self.value_supply_symbol.set(word()[5])
+        self.value_supply_symbol.set(word()[15]+word()[16]+word()[17])
 
         self.entry_perf_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_supply_symbol).grid(column=X, row=Y, padx=10)
 
