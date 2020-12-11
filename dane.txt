@@ -22,158 +22,499 @@
 (?<=zima).................................;
 ;
 ;
-(?#18 - Wydatek)
+(?#18,19,20 - Nawiew-wydatek)
 (?<=oznaczenie projektowe:)..................................;
 ;
 ;
-(?#19 - Spręż dyspozycyny)
+(?#21,22,23 - Nawiew - Spręż dyspozycyny)
 (?<=oznaczenie projektowe:)..................................;
 ;
 ;
-(?#20,21,22 - Sekcja wentylatora - symbol)
+(?#24,25,26 - Sekcja wentylatora nawiewu - symbol)
 (?<=oznaczenie projektowe:)..................................;
 ;
 ;
-(?#23 - Moc)
+(?#27,28,29 - Moc - symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#30,31 - Sekcja wentylatora symbol)
 (?<=oznaczenie projektowe:)..................................;
 ;
 ;
 (?#20 - Sekcja wentylatora symbol)
 (?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
-(?<=oznaczenie projektowe:)..................................;
-(?<=zima).................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
+(?#20 - Sekcja wentylatora symbol)
+(?<=oznaczenie projektowe:)..................................;
+;
+;
