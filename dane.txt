@@ -10,7 +10,9 @@
 (?#value_system_symbol_)
 ;
 (?#value_supply_symbol_)
-;
+(?<=Typ)[\w]+-\w\s?;
+(?<=Wielkość)\s*?\d*\d*\d*\d*?;
+(Strona\s*?obsługi\s*?P)?R;
 (?#value_output_supply)
 ;
 (?#value_pressure_supply)
