@@ -12,7 +12,7 @@
 (?#value_supply_symbol_)
 (?<=Typ)[\w]+-\w\s?;
 (?<=Wielkość)\s*?\d*\d*\d*\d*?;
-(Strona\s*?obsługi\s*?P)?R;
+(Strona obsługi)?(?(1)R);
 (?#value_output_supply)
 ;
 (?#value_pressure_supply)
