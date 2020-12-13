@@ -59,15 +59,15 @@ def blade_runner():
 
         word_01_list.append(word_01)
 
-    print (word_01_list)
 
-    return word_01_list   # solution list first-cought word,  # solution list second-cought word
+
+    return  word_01_list  # solution list first-cought word,  # solution list second-cought word
 
 
 # (?<=Typ).+?(?=<Wielkość)
 
 if __name__ == '__main__':
 
-    blade_runner()
+    print(blade_runner())
 
 

@@ -15,6 +15,9 @@ class Application(Frame):
         super().__init__(master)
         self.master = master
         self.pack()
+        self.number = 0
+        self.count()
+        self.solution=word()
         self.identity_frame()
         self.supply_frame()
         self.vent_supply_frame()
@@ -40,10 +43,16 @@ class Application(Frame):
         self.heat_rec_frame()
         self.mass_frame()
         self.group_various()
-      #  self.print()
         self.get_method_SV()
-        self.print_2()
 
+
+
+
+    def count(self):
+
+        self.number= self.number + 1
+        print (self.number)
+        yield self.number
 
 
     def lba_identity(self,X,Y,txt):
@@ -53,14 +62,14 @@ class Application(Frame):
     def project(self,X=0,Y=1):
 
         self.value_project_no = StringVar()
-        self.value_project_no.set(word()[0] + word()[1] + word()[2])
+        self.value_project_no.set(self.solution[self.count().__next__()])
         self.entry_project = ttk.Entry(self.lframe_identity, textvariable=self.value_project_no).grid(column=X, row=Y )
         self.lba_identity(X,Y,txt="Symbol projektu")
 
 
     def order(self,X=0,Y=10):
         self.value_order_no = StringVar()
-        self.value_order_no.set(word()[3] + word()[4] + word()[5])
+        self.value_order_no.set(self.solution[self.count().__next__()])
 
         self.entry_order = ttk.Entry(self.lframe_identity, textvariable=self.value_order_no).grid(column=X, row=Y,padx=10)
 
@@ -70,7 +79,7 @@ class Application(Frame):
     def serial_number(self,X=20,Y=10):
 
         self.value_se_num = StringVar()
-        self.value_se_num.set(word()[6]+word()[7]+word()[8])
+        self.value_se_num.set(self.solution[self.count().__next__()])
 
         self.entry_se_num = ttk.Entry(self.lframe_identity, textvariable=self.value_se_num).grid(column = X,row = Y , padx=10 )
 
@@ -81,7 +90,7 @@ class Application(Frame):
 
         self.value_model_symbol = StringVar()
 
-        self.value_model_symbol.set(word()[9]+word()[10]+word()[11])
+        self.value_model_symbol.set(self.solution[self.count().__next__()])
 
         self.entry_model = ttk.Entry(self.lframe_identity, textvariable=self.value_model_symbol).grid(column=X, row=Y, padx=10 )
 
@@ -93,7 +102,7 @@ class Application(Frame):
 
         self.value_system_symbol = StringVar()
 
-        self.value_system_symbol.set(word()[12]+word()[13]+word()[14])
+        self.value_system_symbol.set(self.solution[self.count().__next__()])
 
         self.entry_system = ttk.Entry(self.lframe_identity, textvariable=self.value_system_symbol).grid(column=X, row=Y, padx=10 )
 
@@ -125,7 +134,7 @@ class Application(Frame):
 
         self.value_supply_symbol = StringVar()
 
-        self.value_supply_symbol.set(word()[15]+word()[16]+word()[17])
+        self.value_supply_symbol.set(self.solution[self.count().__next__()])
 
         self.entry_perf_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_supply_symbol).grid(column=X, row=Y, padx=10)
 
@@ -136,7 +145,7 @@ class Application(Frame):
 
         self.value_output_supply = StringVar()
 
-        self.value_output_supply.set(word()[18]+word()[19]+word()[20])
+        self.value_output_supply.set(self.solution[self.count().__next__()])
 
         self.entry_output_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_output_supply).grid(column=X, row=Y)
 
@@ -149,7 +158,7 @@ class Application(Frame):
 
         self.value_pressure_supply = StringVar()
 
-        self.value_pressure_supply.set(word()[21]+word()[22]+word()[23])
+        self.value_pressure_supply.set(self.solution[self.count().__next__()])
 
         self.entry_pressure_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_pressure_supply).grid(column=X, row=Y )
 
@@ -171,38 +180,38 @@ class Application(Frame):
     def type_vent_supply(self, X=0, Y=0):
 
         self.value_vent_supply_symbol = StringVar()
-        self.value_vent_supply_symbol.set(word()[24]+word()[25]+word()[26])
+        self.value_vent_supply_symbol.set(self.solution[self.count().__next__()])
         self.entry_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_vent_supply_symbol).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Symbol")
 
 
     def power_vent_supply(self, X=0, Y=20):
         self.value_power_supply = StringVar()
-        self.value_power_supply.set(word()[27]+word()[28]+word()[29])
+        self.value_power_supply.set(self.solution[self.count().__next__()])
         self.entry_power_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_power_supply).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Moc [kW]")
 
     def current_vent_supply(self, X=0, Y=40):
         self.value_current_supply = StringVar()
-        self.value_current_supply.set(word()[30]+word()[31]+word()[32])
+        self.value_current_supply.set(self.solution[self.count().__next__()])
         self.entry_current_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_current_supply).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Prąd [A]")
 
     def rotation_vent_supply(self, X=0, Y=60):
         self.value_rotation_supply = StringVar()
-        self.value_rotation_supply.set(word()[33]+word()[34]+word()[35])
+        self.value_rotation_supply.set(self.solution[self.count().__next__()])
         self.entry_rotation_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_rotation_supply).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Obroty [1/min]")
 
     def voltage_vent_supply(self, X=0, Y=80):
         self.value_voltage_supply = StringVar()
-        self.value_voltage_supply.set(word()[36]+word()[37]+word()[38])
+        self.value_voltage_supply.set(self.solution[self.count().__next__()])
         self.entry_voltage_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_voltage_supply).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Napięcie [V]")
 
     def frequency_vent_supply(self, X=0, Y=100):
         self.value_frequency_supply = StringVar()
-        self.value_frequency_supply.set(word()[39]+word()[40]+word()[41])
+        self.value_frequency_supply.set(self.solution[self.count().__next__()])
         self.entry_frequency_supply = ttk.Entry(self.lframe_vent_supply, textvariable=self.value_frequency_supply).grid(column=X, row=Y, padx=10)
         self.lba_vent_supply(X, Y + 10, txt="Częstotliwość [Hz]")
 ##################################################################################################################################################
@@ -226,7 +235,7 @@ class Application(Frame):
 
     def performance_exhaust(self, X=0, Y=0):
         self.value_exhaust_symbol = StringVar()
-        self.value_exhaust_symbol.set(word()[42]+word()[43]+word()[44])
+        self.value_exhaust_symbol.set(self.solution[self.count().__next__()])
         self.entry_perf_exhaust = ttk.Entry(self.lframe_exhaust, textvariable=self.value_exhaust_symbol).grid(column=X, row=Y, padx=10)
         self.lba_exhaust(X, Y, txt="Wykonanie - symbol")
 
@@ -234,14 +243,14 @@ class Application(Frame):
 
     def output_exhaust(self, X=10, Y=0):
         self.value_output_exhaust = StringVar()
-        self.value_output_exhaust.set(word()[45]+word()[46]+word()[47])
+        self.value_output_exhaust.set(self.solution[self.count().__next__()])
         self.entry_output_exhaust = ttk.Entry(self.lframe_exhaust, textvariable=self.value_output_exhaust).grid(
             column=X, row=Y)
         self.lba_exhaust(X, Y, txt="Wydatek [m3/h]")
 
     def pressure_exhaust(self, X=20, Y=0):
         self.value_pressure_exhaust = StringVar()
-        self.value_pressure_exhaust.set(word()[48]+word()[49]+word()[50])
+        self.value_pressure_exhaust.set(self.solution[self.count().__next__()])
         self.entry_pressure_supply = ttk.Entry(self.lframe_exhaust, textvariable=self.value_pressure_exhaust).grid(
             column=X, row=Y)
         self.lba_exhaust(X, Y, txt="Spręż dyspozycyjny [Pa]")
@@ -260,37 +269,37 @@ class Application(Frame):
 
     def type_vent_exhaust(self, X=0, Y=0):
         self.value_vent_exhaust_symbol = StringVar()
-        self.value_vent_exhaust_symbol.set(word()[51]+word()[52]+word()[53])
+        self.value_vent_exhaust_symbol.set(self.solution[self.count().__next__()])
         self.entry_perf_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_vent_exhaust_symbol).grid(column=X, row=Y, padx=10)
         self.lba_vent_exhaust(X, Y+10, txt="Symbol" )
 
     def power_vent_exhaust(self, X=0, Y=20):
         self.value_power_vent_exhaust = StringVar()
-        self.value_power_vent_exhaust.set(word()[54]+word()[55]+word()[56])
+        self.value_power_vent_exhaust.set(self.solution[self.count().__next__()])
         self.entry_power_vent_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_power_vent_exhaust).grid(column=X, row=Y, padx=10)
         self.lba_vent_exhaust(X, Y + 10, txt="Moc [kW]")
 
     def current_vent_exhaust(self, X=0, Y=40):
         self.value_current_vent_exhaust = StringVar()
-        self.value_current_vent_exhaust.set(word()[57]+word()[58]+word()[59])
+        self.value_current_vent_exhaust.set(self.solution[self.count().__next__()])
         self.entry_current_vent_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_current_vent_exhaust).grid(column=X, row=Y, padx=10)
         self.lba_vent_exhaust(X, Y + 10, txt="Prąd [A]")
 
     def rotation_vent_exhaust(self, X=0, Y=60):
         self.value_rotation_vent_exhaust = StringVar()
-        self.value_rotation_vent_exhaust.set(word()[60]+word()[61]+word()[62])
+        self.value_rotation_vent_exhaust.set(self.solution[self.count().__next__()])
         self.entry_rotation_vent_exhaust = ttk.Entry(self.lframe_vent_exhasut,textvariable=self.value_rotation_vent_exhaust).grid(column=X, row=Y, padx=10)
         self.lba_vent_exhaust(X, Y + 10, txt="Obroty [1/min]")
 
     def voltage_vent_exhaust(self, X=0, Y=80):
         self.value_voltage_vent_exhaust = StringVar()
-        self.value_voltage_vent_exhaust.set(word()[63]+word()[64]+word()[65])
+        self.value_voltage_vent_exhaust.set(self.solution[self.count().__next__()])
         self.entry_voltage_vent_exhaust = ttk.Entry(self.lframe_vent_exhasut,textvariable=self.value_voltage_vent_exhaust).grid(column=X,row=Y, padx=10)
         self.lba_vent_exhaust(X, Y + 10, txt="Napięcie [V]")
 
     def frequency_vent_exhaust(self, X=0, Y=100):
         self.value_frequency_vent_exhaust = StringVar()
-        self.value_frequency_vent_exhaust.set(word()[66]+word()[67]+word()[68])
+        self.value_frequency_vent_exhaust.set(self.solution[self.count().__next__()])
         self.entry_frequency_vent_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_frequency_vent_exhaust).grid(column=X, row=Y,padx=10)
         self.lba_vent_exhaust(X, Y + 10, txt="Częstotliwość [Hz]")
 
@@ -311,7 +320,7 @@ class Application(Frame):
 
     def heater_symbol(self, X=0, Y=0):
         self.value_heater_symbol = StringVar()
-        self.value_heater_symbol.set(word()[69]+word()[70]+word()[71])
+        self.value_heater_symbol.set(self.solution[self.count().__next__()])
         self.entry_heater_symbol = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_symbol).grid(column=X,
                                                                                                              row=Y)
         self.lba_heater(X, Y, txt="Symbol")
@@ -322,7 +331,7 @@ class Application(Frame):
 
         #
         self.value_heater_water_01_in = StringVar()
-        self.value_heater_water_01_in.set(word()[72]+word()[73]+word()[74])
+        self.value_heater_water_01_in.set(self.solution[self.count().__next__()])
         self.entry_heater_01_water_in = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_water_01_in).grid(
             column=X, row=Y + 1, padx=10)
         self.lba_heater(X, Y + 1, txt="Zasilanie czynnika [°C]")
@@ -330,25 +339,25 @@ class Application(Frame):
         #
 
         self.value_heater_01_water_out = StringVar()
-        self.value_heater_01_water_out.set(word()[75]+word()[76]+word()[77])
+        self.value_heater_01_water_out.set(self.solution[self.count().__next__()])
         self.entry_heater_water_electric_power = ttk.Entry(self.lframe_heater,textvariable=self.value_heater_01_water_out).grid(column=X,row=Y + 3,padx=10)
         self.lba_heater(X, Y + 3, txt="Powrót czynnika [°C]")
 
         self.value_heater_water_01_power = StringVar()
-        self.value_heater_water_01_power.set(word()[78]+word()[79]+word()[80])
+        self.value_heater_water_01_power.set(self.solution[self.count().__next__()])
         self.entry_heater_water_01_power = ttk.Entry(self.lframe_heater,textvariable=self.value_heater_water_01_power).grid(column=X, row=Y + 6,padx=10)
         self.lba_heater(X, Y + 6, txt="Moc [kW]")
 
         #
         self.value_heater_water_01_pressure_loss = StringVar()
-        self.value_heater_water_01_pressure_loss.set(word()[81]+word()[82]+word()[83])
+        self.value_heater_water_01_pressure_loss.set(self.solution[self.count().__next__()])
         self.entry_heater_water_01_power = ttk.Entry(self.lframe_heater,textvariable=self.value_heater_water_01_pressure_loss).grid(column=X, row=Y + 9, padx=10)
         self.lba_heater(X, Y + 9, txt="Spadek ciśnienia [kPa]")
 
     def heater_water_02(self, X=20, Y=3):
 
         self.value_heater_02_water_in = StringVar()
-        self.value_heater_02_water_in.set(word()[84]+word()[85]+word()[86])
+        self.value_heater_02_water_in.set(self.solution[self.count().__next__()])
         self.lba_heater(X, Y - 1, txt="II")
         self.entry_heater_02_water_in = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_02_water_in).grid(column=X, row=Y + 1, padx=10, sticky=W)
         self.lba_heater(X, Y + 1, txt="Temp. zasilanie czynnika [°C]")
@@ -356,27 +365,27 @@ class Application(Frame):
         #
 
         self.value_heater_02_water_out = StringVar()
-        self.value_heater_02_water_out.set(word()[87]+word()[88]+word()[89])
+        self.value_heater_02_water_out.set(self.solution[self.count().__next__()])
         self.entry_heater_02_water_out = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_02_water_out).grid(column=X, row=Y + 3, padx=10,sticky=W)
         self.lba_heater(X, Y + 3, txt="Temp. powrotu czynnika [°C]")
         #
 
         self.value_heater_water_02_power = StringVar()
-        self.value_heater_water_02_power.set(word()[90]+word()[91]+word()[92])
+        self.value_heater_water_02_power.set(self.solution[self.count().__next__()])
         self.entry_heater_water_02_power = ttk.Entry(self.lframe_heater,textvariable=self.value_heater_water_02_power).grid(column=X, row=Y + 6,  padx=10, sticky=W)
         self.lba_heater(X, Y + 6, txt="Moc [kW]")
 
         #
 
         self.value_heater_water_02_pressure_loss = StringVar()
-        self.value_heater_water_02_pressure_loss.set(word()[93]+word()[94]+word()[95])
+        self.value_heater_water_02_pressure_loss.set(self.solution[self.count().__next__()])
         self.entry_heater_water_02_pressure_loss = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_water_02_pressure_loss).grid( column=X, row=Y + 9, padx=10, sticky=W)
         self.lba_heater(X, Y + 9, txt="Spadek ciśnienia [kPa]")
 
     def heater_electric(self, X=30, Y=3):
 
         self.value_heater_electric_power_winter = StringVar()
-        self.value_heater_electric_power_winter.set(word()[96]+word()[97]+word()[98])
+        self.value_heater_electric_power_winter.set(self.solution[self.count().__next__()])
         self.entry_heater_electric_power_winter = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_electric_power_winter).grid( column=X, row=Y + 1, padx=10, sticky=W)
         self.lba_heater(X, Y - 1, txt="Elektryczna")
         self.lba_heater(X, Y + 1, txt="Moc zima [kW]")
@@ -384,13 +393,13 @@ class Application(Frame):
         #
 
         self.value_heater_02_water_power = StringVar()
-        self.value_heater_02_water_power.set((word()[99]+word()[100]+word()[101]))
+        self.value_heater_02_water_power.set(())
         self.entry_heater_water_electric_power = ttk.Entry(self.lframe_heater,textvariable=self.value_heater_02_water_power).grid(column=X,    row=Y + 3,  padx=10,sticky=W)
         self.lba_heater(X, Y + 3, txt="Moc znamionowa [kW]")
         #
 
         self.value_heater_electric_voltage = StringVar()
-        self.value_heater_electric_voltage.set(word()[102]+ word()[103]+ word()[104])
+        self.value_heater_electric_voltage.set(self.solution[self.count().__next__()])
         self.entry_heater_electric_voltage = ttk.Entry(self.lframe_heater, textvariable=self.value_heater_electric_voltage).grid(column=X,    row=Y + 6, padx=10, sticky=W)
         self.lba_heater(X, Y + 6, txt="Napięcie zasilania [V]")
 
@@ -409,34 +418,34 @@ class Application(Frame):
 
     def cooler_symbol(self, X=0, Y=0):
         self.value_cooler_symbol = StringVar()
-        self.value_cooler_symbol.set(word()[105]+ word()[106]+ word()[107])
+        self.value_cooler_symbol.set(self.solution[self.count().__next__()])
         self.entry_cooler_symbol = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_symbol).grid(column=X,row=Y, padx=10, sticky=W)
         self.lba_cooler(X, Y, "Symbol")
 
     def cooler_water(self, X=0, Y=3):
 
         self.value_cooler_water_in = StringVar()
-        self.value_cooler_water_in.set(word()[108]+ word()[109]+ word()[110])
+        self.value_cooler_water_in.set(self.solution[self.count().__next__()])
         self.entry_cooler_water_in = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_in).grid(
             column=X, row=Y, padx=10, sticky=W)
         self.lba_cooler(X, Y - 2, "Wodna")
         self.lba_cooler(X, Y + 1, "Temp. zasil. czynnika [°C]")
 
         self.value_cooler_water_out = StringVar()
-        self.value_cooler_water_out.set(word()[111]+ word()[112]+ word()[113])
+        self.value_cooler_water_out.set(self.solution[self.count().__next__()])
         self.entry_cooler_water_out = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_out).grid(column=X, row=Y + 3, padx=10, sticky=W)
         self.lba_cooler(X, Y + 3, "Temp. powr. czynnika [°C]")
 
         #
         self.value_cooler_water_power = StringVar()
-        self.value_cooler_water_power.set(word()[114]+ word()[115]+ word()[116])
+        self.value_cooler_water_power.set(self.solution[self.count().__next__()])
         self.entry_cooler_water_power = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_water_power).grid(column=X, row=Y + 6, padx=10, sticky=W)
         self.lba_cooler(X, Y + 6, "Moc lato [kW]")
 
         #
 
         self.value_cooler_water_pressure_loss = StringVar()
-        self.value_cooler_water_pressure_loss.set(word()[117]+ word()[118]+ word()[119])
+        self.value_cooler_water_pressure_loss.set(self.solution[self.count().__next__()])
         self.entry_pressure_loss = ttk.Entry(self.lframe_cooler,textvariable=self.value_cooler_water_pressure_loss).grid(column=X,row=Y + 9,padx=10, sticky=W)
         self.lba_cooler(X, Y + 9, " Opór hydrauliczny [kPa]")
         #
@@ -444,19 +453,19 @@ class Application(Frame):
     def cooler_freon(self, X=30, Y=3):
 
         self.value_cooler_freon_refrig = StringVar()
-        self.value_cooler_freon_refrig.set(word()[120]+ word()[121] + word()[122])
+        self.value_cooler_freon_refrig.set(self.solution[self.count().__next__()])
         self.entry_cooler_freon_refrig = ttk.Entry(self.lframe_cooler,textvariable=self.value_cooler_freon_refrig).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_cooler(X, Y - 2, "Freonowa")
         self.lba_cooler(X, Y + 1, "Rodzaj czynnika")
 
         #
         self.value_cooler_freon_power = StringVar()
-        self.value_cooler_freon_power.set(word()[123]+ word()[124] + word()[125])
+        self.value_cooler_freon_power.set(self.solution[self.count().__next__()])
         self.entry_cooler_freon_refrig = ttk.Entry(self.lframe_cooler, textvariable=self.value_cooler_freon_power).grid(column=X, row=Y + 3, padx=10, sticky=W)
         self.lba_cooler(X, Y + 3, "Moc chłodnicy - lato [kW]")
         #
         self.value_cooler_freon_pressure_loss = StringVar()
-        self.value_cooler_freon_pressure_loss.set(word()[126]+ word()[127] + word()[128])
+        self.value_cooler_freon_pressure_loss.set(self.solution[self.count().__next__()])
         self.entry_cooler_freon_pressure_loss = ttk.Entry(self.lframe_cooler,textvariable=self.value_cooler_freon_pressure_loss).grid(
             column=X, row=Y + 6, padx=10, sticky=W)
         self.lba_cooler(X, Y + 6, "Opór hydrauliczny [kPa]")
@@ -474,25 +483,25 @@ class Application(Frame):
 
     def symbol_pre_filter_01_supply(self, X=0, Y=0):
         self.value_symbol_pre_filter_01_supply = StringVar()
-        self.value_symbol_pre_filter_01_supply.set(word()[129]+ word()[130] + word()[131])
+        self.value_symbol_pre_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_pre_filter_01_supply = ttk.Entry(self.lframe_pre_filter_01_supply, textvariable=self.value_symbol_pre_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_supply(X, Y + 10, txt="Symbol")
 
     def class_pre_filter_01_supply(self, X=10, Y=0):
         self.value_class_pre_filter_01_supply = StringVar()
-        self.value_class_pre_filter_01_supply.set(word()[132]+ word()[133] + word()[134])
+        self.value_class_pre_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_class_pre_filter_01_supply = ttk.Entry(self.lframe_pre_filter_01_supply, textvariable=self.value_class_pre_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_supply(X, Y + 10, txt="Klasa")
 
     def size_pre_filter_01_supply(self, X=20, Y=0):
         self.value_size_pre_filter_01_supply = StringVar()
-        self.value_size_pre_filter_01_supply.set(word()[135]+ word()[136] + word()[137])
+        self.value_size_pre_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_size_pre_filter_01_supply = ttk.Entry(self.lframe_pre_filter_01_supply, textvariable=self.value_size_pre_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_supply(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_pre_filter_01_supply(self, X=30, Y=0):
         self.value_quantity_pre_filter_01_supply = StringVar()
-        self.value_quantity_pre_filter_01_supply.set(word()[138]+ word()[139] + word()[140])
+        self.value_quantity_pre_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_quantity_pre_filter_01_supply = ttk.Entry(self.lframe_pre_filter_01_supply, textvariable=self.value_quantity_pre_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_supply(X, Y + 10, txt="Ilość [szt]")
 
@@ -511,26 +520,26 @@ class Application(Frame):
 
     def symbol_pre_filter_02_supply(self, X=0, Y=0):
         self.value_symbol_pre_filter_02_supply = StringVar()
-        self.value_symbol_pre_filter_02_supply.set(word()[141]+ word()[142] + word()[143])
+        self.value_symbol_pre_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_pre_filter_02_supply = ttk.Entry(self.lframe_pre_filter_02_supply,textvariable=self.value_symbol_pre_filter_02_supply).grid(column=X,row=Y,padx=5)
         self.lba_pre_filter_02_supply(X, Y + 10, txt="Symbol")
 
     def class_pre_filter_02_supply(self, X=10, Y=0):
         self.value_class_pre_filter_02_supply = StringVar()
-        self.value_class_pre_filter_02_supply.set(word()[144]+ word()[145] + word()[146])
+        self.value_class_pre_filter_02_supply.set(self.solution[self.count().__next__()])
 
         self.entry_class_pre_filter_02_supply = ttk.Entry(self.lframe_pre_filter_02_supply,textvariable=self.value_class_pre_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_supply(X, Y + 10, txt="Klasa")
 
     def size_pre_filter_02_supply(self, X=20, Y=0):
         self.value_size_pre_filter_02_supply = StringVar()
-        self.value_size_pre_filter_02_supply.set(word()[147]+ word()[148] + word()[149])
+        self.value_size_pre_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_size_pre_filter_02_supply = ttk.Entry(self.lframe_pre_filter_02_supply,textvariable=self.value_size_pre_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_supply(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_pre_filter_02_supply(self, X=30, Y=0):
         self.value_quantity_pre_filter_02_supply = StringVar()
-        self.value_quantity_pre_filter_02_supply.set(word()[150]+ word()[151] + word()[152])
+        self.value_quantity_pre_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_quantity_pre_filter_02_supply = ttk.Entry(self.lframe_pre_filter_02_supply,textvariable=self.value_quantity_pre_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_supply(X, Y + 10, txt="Ilość [szt]")
 
@@ -552,25 +561,25 @@ class Application(Frame):
 
     def symbol_second_filter_01_supply(self, X=0, Y=0):
         self.value_symbol_second_filter_01_supply = StringVar()
-        self.value_symbol_second_filter_01_supply.set(word()[153]+ word()[154] + word()[155])
+        self.value_symbol_second_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_second_filter_01_supply = ttk.Entry(self.lframe_second_filter_01_supply,textvariable=self.value_symbol_second_filter_01_supply).grid(column=X,row=Y,padx=5)
         self.lba_second_filter_01_supply(X, Y + 10, txt="Symbol")
 
     def class_second_filter_01_supply(self, X=10, Y=0):
         self.value_class_second_filter_01_supply = StringVar()
-        self.value_class_second_filter_01_supply.set(word()[156]+ word()[157] + word()[158])
+        self.value_class_second_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_class_second_filter_01_supply = ttk.Entry(self.lframe_second_filter_01_supply,textvariable=self.value_class_second_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_supply(X, Y + 10, txt="Klasa")
 
     def size_second_filter_01_supply(self, X=20, Y=0):
         self.value_size_second_filter_01_supply = StringVar()
-        self.value_size_second_filter_01_supply.set(word()[159]+ word()[160] + word()[161])
+        self.value_size_second_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_size_second_filter_01_supply = ttk.Entry(self.lframe_second_filter_01_supply,textvariable=self.value_size_second_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_supply(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_second_filter_01_supply(self, X=30, Y=0):
         self.value_quantity_second_filter_01_supply = StringVar()
-        self.value_quantity_second_filter_01_supply.set(word()[162]+ word()[163] + word()[164])
+        self.value_quantity_second_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_quantity_second_filter_01_supply = ttk.Entry(self.lframe_second_filter_01_supply,textvariable=self.value_quantity_second_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_supply(X, Y + 10, txt="Ilość [szt]")
 
@@ -593,25 +602,25 @@ class Application(Frame):
 
     def symbol_second_filter_02_supply(self, X=0, Y=0):
         self.value_symbol_second_filter_02_supply = StringVar()
-        self.value_symbol_second_filter_02_supply.set(word()[165]+ word()[166] + word()[167])
+        self.value_symbol_second_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_second_filter_02_supply = ttk.Entry(self.lframe_second_filter_02_supply,textvariable=self.value_symbol_second_filter_02_supply).grid(column=X,row=Y,padx=5)
         self.lba_second_filter_02_supply(X, Y + 10, txt="Symbol")
 
     def class_second_filter_02_supply(self, X=10, Y=0):
         self.value_class_second_filter_02_supply = StringVar()
-        self.value_class_second_filter_02_supply.set(word()[168]+ word()[169] + word()[170])
+        self.value_class_second_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_class_second_filter_02_supply = ttk.Entry(self.lframe_second_filter_02_supply,textvariable=self.value_class_second_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_supply(X, Y + 10, txt="Klasa")
 
     def size_second_filter_02_supply(self, X=20, Y=0):
         self.value_size_second_filter_02_supply = StringVar()
-        self.value_size_second_filter_02_supply.set(word()[171]+ word()[172] + word()[173])
+        self.value_size_second_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_size_second_filter_02_supply = ttk.Entry(self.lframe_second_filter_02_supply,textvariable=self.value_size_second_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_supply(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_second_filter_02_supply(self, X=30, Y=0):
         self.value_quantity_second_filter_02_supply = StringVar()
-        self.value_quantity_second_filter_02_supply.set(word()[174]+ word()[175] + word()[176])
+        self.value_quantity_second_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_quantity_second_filter_02_supply = ttk.Entry(self.lframe_second_filter_02_supply,textvariable=self.value_quantity_second_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_supply(X, Y + 10, txt="Ilość [szt]")
 
@@ -631,25 +640,25 @@ class Application(Frame):
 
     def symbol_third_filter_01_supply(self, X=0, Y=0):
         self.value_symbol_third_filter_01_supply = StringVar()
-        self.value_symbol_third_filter_01_supply.set(word()[177]+ word()[178] + word()[179])
+        self.value_symbol_third_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_third_filter_01_supply = ttk.Entry(self.lframe_third_filter_01_supply,textvariable=self.value_symbol_third_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_supply(X, Y + 10, txt="Symbol")
 
     def class_third_filter_01_supply(self, X=10, Y=0):
         self.value_class_third_filter_01_supply = StringVar()
-        self.value_class_third_filter_01_supply.set(word()[180]+ word()[181] + word()[182])
+        self.value_class_third_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_class_third_filter_01_supply = ttk.Entry(self.lframe_third_filter_01_supply,textvariable=self.value_class_third_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_supply(X, Y + 10, txt="Klasa")
 
     def size_third_filter_01_supply(self, X=20, Y=0):
         self.value_size_third_filter_01_supply = StringVar()
-        self.value_size_third_filter_01_supply.set(word()[183]+ word()[184] + word()[185])
+        self.value_size_third_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_size_third_filter_01_supply = ttk.Entry(self.lframe_third_filter_01_supply,textvariable=self.value_size_third_filter_01_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_supply(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_third_filter_01_supply(self, X=30, Y=0):
         self.value_quantity_third_filter_01_supply = StringVar()
-        self.value_quantity_third_filter_01_supply.set(word()[186]+ word()[187] + word()[188])
+        self.value_quantity_third_filter_01_supply.set(self.solution[self.count().__next__()])
         self.entry_quantity_third_filter_01_supply = ttk.Entry(self.lframe_third_filter_01_supply,textvariable=self.value_quantity_third_filter_01_supply).grid(
             column=X, row=Y, padx=5)
         self.lba_third_filter_01_supply(X, Y + 10, txt="Ilość [szt]")
@@ -669,25 +678,25 @@ class Application(Frame):
 
     def symbol_third_filter_02_supply(self, X=0, Y=0):
         self.value_symbol_third_filter_02_supply = StringVar()
-        self.value_symbol_third_filter_02_supply.set(word()[189]+ word()[190] + word()[191])
+        self.value_symbol_third_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_third_filter_02_supply = ttk.Entry(self.lframe_third_filter_02_supply,textvariable=self.value_symbol_third_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_supply(X, Y + 10, txt="Symbol")
 
     def class_third_filter_02_supply(self, X=10, Y=0):
         self.value_class_third_filter_02_supply = StringVar()
-        self.value_class_third_filter_02_supply.set(word()[192]+ word()[193] + word()[194])
+        self.value_class_third_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_class_third_filter_02_supply = ttk.Entry(self.lframe_third_filter_02_supply,textvariable=self.value_class_third_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_supply(X, Y + 10, txt="Klasa")
 
     def size_third_filter_02_supply(self, X=20, Y=0):
         self.value_size_third_filter_02_supply = StringVar()
-        self.value_size_third_filter_02_supply.set(word()[195]+ word()[196] + word()[197])
+        self.value_size_third_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_size_third_filter_02_supply = ttk.Entry(self.lframe_third_filter_02_supply,textvariable=self.value_size_third_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_supply(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_third_filter_02_supply(self, X=30, Y=0):
         self.value_quantity_third_filter_02_supply = StringVar()
-        self.value_quantity_third_filter_02_supply.set(word()[198]+ word()[199] + word()[200])
+        self.value_quantity_third_filter_02_supply.set(self.solution[self.count().__next__()])
         self.entry_quantity_third_filter_02_supply = ttk.Entry(self.lframe_third_filter_02_supply,textvariable=self.value_quantity_third_filter_02_supply).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_supply(X, Y + 10, txt="Ilość [szt]")
 
@@ -708,25 +717,25 @@ class Application(Frame):
 
     def symbol_pre_filter_01_exhaust(self, X=0, Y=0):
         self.value_symbol_pre_filter_01_exhaust = StringVar()
-        self.value_symbol_pre_filter_01_exhaust.set(word()[201]+ word()[202] + word()[203])
+        self.value_symbol_pre_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_pre_filter_01_exhaust = ttk.Entry(self.lframe_pre_filter_01_exhaust,textvariable=self.value_symbol_pre_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_exhaust(X, Y + 10, txt="Symbol")
 
     def class_pre_filter_01_exhaust(self, X=10, Y=0):
         self.value_class_pre_filter_01_exhaust = StringVar()
-        self.value_class_pre_filter_01_exhaust.set(word()[204]+ word()[205] + word()[206])
+        self.value_class_pre_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_class_pre_filter_01_exhaust = ttk.Entry(self.lframe_pre_filter_01_exhaust,textvariable=self.value_class_pre_filter_01_exhaust).grid( column=X, row=Y, padx=5)
         self.lba_pre_filter_01_exhaust(X, Y + 10, txt="Klasa")
 
     def size_pre_filter_01_exhaust(self, X=20, Y=0):
         self.value_size_pre_filter_01_exhaust = StringVar()
-        self.value_size_pre_filter_01_exhaust.set(word()[207]+ word()[208] + word()[209])
+        self.value_size_pre_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_size_pre_filter_01_exhaust = ttk.Entry(self.lframe_pre_filter_01_exhaust,textvariable=self.value_size_pre_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_exhaust(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_pre_filter_01_exhaust(self, X=30, Y=0):
         self.value_quantity_pre_filter_01_exhaust = StringVar()
-        self.value_quantity_pre_filter_01_exhaust.set(word()[210]+ word()[211] + word()[212])
+        self.value_quantity_pre_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_quantity_pre_filter_01_exhaust = ttk.Entry(self.lframe_pre_filter_01_exhaust,textvariable=self.value_quantity_pre_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_01_exhaust(X, Y + 10, txt="Ilość [szt]")
 
@@ -745,25 +754,25 @@ class Application(Frame):
 
     def symbol_pre_filter_02_exhaust(self, X=0, Y=0):
         self.value_symbol_pre_filter_02_exhaust = StringVar()
-        self.value_symbol_pre_filter_02_exhaust.set(word()[213]+ word()[214] + word()[215])
+        self.value_symbol_pre_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_pre_filter_02_exhaust = ttk.Entry(self.lframe_pre_filter_02_exhaust,textvariable=self.value_symbol_pre_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_exhaust(X, Y + 10, txt="Symbol")
 
     def class_pre_filter_02_exhaust(self, X=10, Y=0):
         self.value_class_pre_filter_02_exhaust = StringVar()
-        self.value_class_pre_filter_02_exhaust.set(word()[216]+ word()[217] + word()[218])
+        self.value_class_pre_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_class_pre_filter_02_exhaust = ttk.Entry(self.lframe_pre_filter_02_exhaust,textvariable=self.value_class_pre_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_exhaust(X, Y + 10, txt="Klasa")
 
     def size_pre_filter_02_exhaust(self, X=20, Y=0):
         self.value_size_pre_filter_02_exhaust = StringVar()
-        self.value_size_pre_filter_02_exhaust.set(word()[219]+ word()[220] + word()[221])
+        self.value_size_pre_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_size_pre_filter_02_exhaust = ttk.Entry(self.lframe_pre_filter_02_exhaust,textvariable=self.value_size_pre_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_exhaust(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_pre_filter_02_exhaust(self, X=30, Y=0):
         self.value_quantity_pre_filter_02_exhaust = StringVar()
-        self.value_quantity_pre_filter_02_exhaust.set(word()[222]+ word()[223] + word()[224])
+        self.value_quantity_pre_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_quantity_pre_filter_02_exhaust = ttk.Entry(self.lframe_pre_filter_02_exhaust,textvariable=self.value_quantity_pre_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_pre_filter_02_exhaust(X, Y + 10, txt="Ilość [szt]")
 
@@ -783,25 +792,25 @@ class Application(Frame):
 
     def symbol_second_filter_01_exhaust(self, X=0, Y=0):
         self.value_symbol_second_filter_01_exhaust = StringVar()
-        self.value_symbol_second_filter_01_exhaust.set(word()[225]+ word()[226] + word()[227])
+        self.value_symbol_second_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_second_filter_01_exhaust = ttk.Entry(self.lframe_second_filter_01_exhaust,textvariable=self.value_symbol_second_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_exhaust(X, Y + 10, txt="Symbol")
 
     def class_second_filter_01_exhaust(self, X=10, Y=0):
         self.value_class_second_filter_01_exhaust = StringVar()
-        self.value_class_second_filter_01_exhaust.set(word()[228]+ word()[229] + word()[230])
+        self.value_class_second_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_class_second_filter_01_exhaust = ttk.Entry(self.lframe_second_filter_01_exhaust,textvariable=self.value_class_second_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_exhaust(X, Y + 10, txt="Klasa")
 
     def size_second_filter_01_exhaust(self, X=20, Y=0):
         self.value_size_second_filter_01_exhaust = StringVar()
-        self.value_size_second_filter_01_exhaust.set(word()[231]+ word()[232] + word()[233])
+        self.value_size_second_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_size_second_filter_01_exhaust = ttk.Entry(self.lframe_second_filter_01_exhaust,textvariable=self.value_size_second_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_exhaust(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_second_filter_01_exhaust(self, X=30, Y=0):
         self.value_quantity_second_filter_01_exhaust = StringVar()
-        self.value_quantity_second_filter_01_exhaust.set(word()[234]+ word()[235] + word()[236])
+        self.value_quantity_second_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_quantity_second_filter_01_exhaust = ttk.Entry(self.lframe_second_filter_01_exhaust,textvariable=self.value_quantity_second_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_01_exhaust(X, Y + 10, txt="Ilość [szt]")
 
@@ -821,25 +830,25 @@ class Application(Frame):
 
     def symbol_second_filter_02_exhaust(self, X=0, Y=0):
         self.value_symbol_second_filter_02_exhaust = StringVar()
-        self.value_symbol_second_filter_02_exhaust.set(word()[237]+ word()[238] + word()[239])
+        self.value_symbol_second_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_second_filter_02_exhaust = ttk.Entry(self.lframe_second_filter_02_exhaust,textvariable=self.value_symbol_second_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_exhaust(X, Y + 10, txt="Symbol")
 
     def class_second_filter_02_exhaust(self, X=10, Y=0):
         self.value_class_second_filter_02_exhaust = StringVar()
-        self.value_class_second_filter_02_exhaust.set(word()[240]+ word()[241] + word()[242])
+        self.value_class_second_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_class_second_filter_02_exhaust = ttk.Entry(self.lframe_second_filter_02_exhaust,textvariable=self.value_class_second_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_exhaust(X, Y + 10, txt="Klasa")
 
     def size_second_filter_02_exhaust(self, X=20, Y=0):
         self.value_size_second_filter_02_exhaust = StringVar()
-        self.value_size_second_filter_02_exhaust.set(word()[243]+ word()[244] + word()[245])
+        self.value_size_second_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_size_second_filter_02_exhaust = ttk.Entry(self.lframe_second_filter_02_exhaust,textvariable=self.value_size_second_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_exhaust(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_second_filter_02_exhaust(self, X=30, Y=0):
         self.value_quantity_second_filter_02_exhaust = StringVar()
-        self.value_quantity_second_filter_02_exhaust.set(word()[246]+ word()[247] + word()[248])
+        self.value_quantity_second_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_quantity_second_filter_02_exhaust = ttk.Entry(self.lframe_second_filter_02_exhaust,textvariable=self.value_quantity_second_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_second_filter_02_exhaust(X, Y + 10, txt="Ilość [szt]")
 
@@ -858,26 +867,26 @@ class Application(Frame):
 
     def symbol_third_filter_01_exhaust(self, X=0, Y=0):
         self.value_symbol_third_filter_01_exhaust = StringVar()
-        self.value_symbol_third_filter_01_exhaust.set(word()[249]+ word()[250] + word()[251])
+        self.value_symbol_third_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_third_filter_01_exhaust = ttk.Entry(self.lframe_third_filter_01_exhaust,textvariable=self.value_symbol_third_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_exhaust(X, Y + 10, txt="Symbol")
 
     def class_third_filter_01_exhaust(self, X=10, Y=0):
         self.value_class_third_filter_01_exhaust = StringVar()
-        self.value_class_third_filter_01_exhaust.set(word()[252]+ word()[253] + word()[254])
+        self.value_class_third_filter_01_exhaust.set(self.solution[self.count().__next__()])
 
         self.entry_class_third_filter_01_exhaust = ttk.Entry(self.lframe_third_filter_01_exhaust,textvariable=self.value_class_third_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_exhaust(X, Y + 10, txt="Klasa")
 
     def size_third_filter_01_exhaust(self, X=20, Y=0):
         self.value_size_third_filter_01_exhaust = StringVar()
-        self.value_size_third_filter_01_exhaust.set(word()[255]+ word()[256] + word()[257])
+        self.value_size_third_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_size_third_filter_01_exhaust = ttk.Entry(self.lframe_third_filter_01_exhaust,textvariable=self.value_size_third_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_exhaust(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_third_filter_01_exhaust(self, X=30, Y=0):
         self.value_quantity_third_filter_01_exhaust = StringVar()
-        self.value_quantity_third_filter_01_exhaust.set(word()[258]+ word()[259] + word()[260])
+        self.value_quantity_third_filter_01_exhaust.set(self.solution[self.count().__next__()])
         self.entry_quantity_third_filter_01_exhaust = ttk.Entry(self.lframe_third_filter_01_exhaust,textvariable=self.value_quantity_third_filter_01_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_01_exhaust(X, Y + 10, txt="Ilość [szt]")
 
@@ -896,25 +905,25 @@ class Application(Frame):
 
     def symbol_third_filter_02_exhaust(self, X=0, Y=0):
         self.value_symbol_third_filter_02_exhaust = StringVar()
-        self.value_symbol_third_filter_02_exhaust.set(word()[261]+ word()[262] + word()[263])
+        self.value_symbol_third_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_third_filter_02_exhaust = ttk.Entry(self.lframe_third_filter_02_exhaust,textvariable=self.value_symbol_third_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_exhaust(X, Y + 10, txt="Symbol")
 
     def class_third_filter_02_exhaust(self, X=10, Y=0):
         self.value_class_third_filter_02_exhaust = StringVar()
-        self.value_class_third_filter_02_exhaust.set(word()[264]+ word()[265] + word()[266])
+        self.value_class_third_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_class_third_filter_02_exhaust = ttk.Entry(self.lframe_third_filter_02_exhaust,textvariable=self.value_class_third_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_exhaust(X, Y + 10, txt="Klasa")
 
     def size_third_filter_02_exhaust(self, X=20, Y=0):
         self.value_size_third_filter_02_exhaust = StringVar()
-        self.value_size_third_filter_02_exhaust.set(word()[267]+ word()[268] + word()[269])
+        self.value_size_third_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_size_third_filter_02_exhaust = ttk.Entry(self.lframe_third_filter_02_exhaust,textvariable=self.value_size_third_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_exhaust(X, Y + 10, txt="Rozmiar [mm]")
 
     def quantity_third_filter_02_exhaust(self, X=30, Y=0):
         self.value_quantity_third_filter_02_exhaust = StringVar()
-        self.value_quantity_third_filter_02_exhaust.set(word()[270]+ word()[271] + word()[272])
+        self.value_quantity_third_filter_02_exhaust.set(self.solution[self.count().__next__()])
         self.entry_quantity_third_filter_02_exhaust = ttk.Entry(self.lframe_third_filter_02_exhaust,textvariable=self.value_quantity_third_filter_02_exhaust).grid(column=X, row=Y, padx=5)
         self.lba_third_filter_02_exhaust(X, Y + 10, txt="Ilość [szt]")
 
@@ -935,7 +944,7 @@ class Application(Frame):
 
     def heat_recovery_symbol(self, X=0, Y=0):
         self.value_heat_recovery = StringVar()
-        self.value_heat_recovery.set(word()[273]+ word()[274] + word()[275])
+        self.value_heat_recovery.set(self.solution[self.count().__next__()])
         self.entry_heat_recovery_symbol = ttk.Entry(self.lframe_counter, textvariable=self.value_heat_recovery).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_recovery(X, Y, "Symbol")
 
@@ -955,7 +964,7 @@ class Application(Frame):
     def glicol_symbol_motor_typ(self,X=0, Y=10):
 
         self.value_glicol_symbol_motor_typ=StringVar()
-        self.value_glicol_symbol_motor_typ.set(word()[276]+ word()[277] + word()[278])
+        self.value_glicol_symbol_motor_typ.set(self.solution[self.count().__next__()])
 
         self.entry_glicol_motor_typ = ttk.Entry(self.lframe_heat_rec, textvariable=self.value_glicol_symbol_motor_typ).grid(column=X, row=Y, padx=10, sticky=W)
 
@@ -964,7 +973,7 @@ class Application(Frame):
     def glicol_symbol_motor_pwr(self, X=0, Y=30):
 
         self.value_glicol_motor_pwr = StringVar()
-        self.value_glicol_motor_pwr.set(word()[279]+ word()[280] + word()[281])
+        self.value_glicol_motor_pwr.set(self.solution[self.count().__next__()])
         self.entry_glicol_motor_pwr = ttk.Entry(self.lframe_heat_rec, textvariable=self.value_glicol_motor_pwr).grid(column=X, row=Y, padx=10, sticky=W)
 
         self.lba_heat_rec(X, Y, "Moc sil. p-y glikolu [kW]")
@@ -972,20 +981,20 @@ class Application(Frame):
 
     def glicol_symbol_motor_voltage(self, X=0, Y=60):
         self.value_glicol_motor_voltage = StringVar()
-        self.value_glicol_motor_voltage.set(word()[282]+ word()[283] + word()[284])
+        self.value_glicol_motor_voltage.set(self.solution[self.count().__next__()])
         self.entry_glicol_motor_voltage = ttk.Entry(self.lframe_heat_rec, textvariable=self.value_glicol_motor_voltage).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_rec(X, Y, "Napięcie zas. pompy [V]")
 
     def rotor_exchanger_symbol_motor_pwr(self, X=20, Y=30):
         self.value_rotor_exchanger_motor_pwr = StringVar()
-        self.value_rotor_exchanger_motor_pwr.set(word()[285]+ word()[286] + word()[287])
+        self.value_rotor_exchanger_motor_pwr.set(self.solution[self.count().__next__()])
         self.entry_rotor_exchanger_motor_pwr = ttk.Entry(self.lframe_heat_rec,textvariable=self.value_rotor_exchanger_motor_pwr).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_rec(X, Y, "Moc sil. wym. obr. [kW]")
 
 
     def rotor_exchanger_symbol_motor_voltage(self, X=20, Y=60):
         self.value_rotor_exchanger_motor_voltage = StringVar()
-        self.value_rotor_exchanger_motor_voltage.set(word()[288]+ word()[289] + word()[290])
+        self.value_rotor_exchanger_motor_voltage.set(self.solution[self.count().__next__()])
         self.entry_rotor_exchanger_motor_voltage = ttk.Entry(self.lframe_heat_rec,textvariable=self.value_rotor_exchanger_motor_voltage).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_heat_rec(X, Y, "Napięcie zas. silnika wym .obr. [V]")
 
@@ -1013,26 +1022,26 @@ class Application(Frame):
 
     def humidifier_typ(self, X=0, Y=10):
         self.value_humidifier_typ = StringVar()
-        self.value_humidifier_typ.set(word()[291]+ word()[292] + word()[293])
+        self.value_humidifier_typ.set(self.solution[self.count().__next__()])
         self.entry_humidifier_typ = ttk.Entry(self.lframe_humidifier, textvariable=self.value_humidifier_typ).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Symbol")
 
 
     def humidifier_outgo(self, X=0, Y=20):
         self.value_humidifier_outgo = StringVar()
-        self.value_humidifier_outgo.set(word()[294]+ word()[295] + word()[296])
+        self.value_humidifier_outgo.set(self.solution[self.count().__next__()])
         self.entry_humidifier_outgo = ttk.Entry(self.lframe_humidifier, textvariable=self.value_humidifier_outgo).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Wydajność [kg/h]")
 
     def humidifier_pwr(self, X=0, Y=30):
         self.value_humidifier_pwr = StringVar()
-        self.value_humidifier_pwr.set(word()[297]+ word()[298] + word()[299])
+        self.value_humidifier_pwr.set(self.solution[self.count().__next__()])
         self.entry_humidifier_pwr = ttk.Entry(self.lframe_humidifier, textvariable=self.value_humidifier_pwr).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Moc [kW]")
 
     def humidifier_voltage(self, X=0, Y=60):
         self.value_humidifier_voltage = StringVar()
-        self.value_humidifier_voltage.set(word()[300]+ word()[301] + word()[302])
+        self.value_humidifier_voltage.set(self.solution[self.count().__next__()])
         self.entry_humidifier_voltage = ttk.Entry(self.lframe_humidifier,textvariable=self.value_humidifier_voltage).grid(column=X, row=Y,padx=10, sticky=W)
         self.lba_humidifier(X, Y, "Napięcie zasilania [V]")
 
@@ -1056,26 +1065,26 @@ class Application(Frame):
 
     def humidifier_pump_typ(self, X=0, Y=10):
         self.value_humidifier_pump_typ = StringVar()
-        self.value_humidifier_pump_typ.set(word()[303]+ word()[304] + word()[305])
+        self.value_humidifier_pump_typ.set(self.solution[self.count().__next__()])
         self.entry_humidifier_pump_typ = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.value_humidifier_pump_typ).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier_pump(X, Y, "Symbol")
 
 
     def humidifier_pump_current(self, X=0, Y=20):
         self.value_humidifier_pump_current = StringVar()
-        self.value_humidifier_pump_current.set(word()[306]+ word()[307] + word()[308])
+        self.value_humidifier_pump_current.set(self.solution[self.count().__next__()])
         self.entry_humidifier_pump_current = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.value_humidifier_pump_current).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier_pump(X, Y, "Prąd [A]]")
 
     def humidifier_pump_pwr(self, X=0, Y=30):
         self.value_humidifier_pump_pwr = StringVar()
-        self.value_humidifier_pump_pwr.set(word()[309]+ word()[310] + word()[311])
+        self.value_humidifier_pump_pwr.set(self.solution[self.count().__next__()])
         self.entry_humidifier_pump_pwr = ttk.Entry(self.lframe_humidifier_pump, textvariable=self.value_humidifier_pump_pwr).grid(column=X, row=Y, padx=10, sticky=W)
         self.lba_humidifier_pump(X, Y, "Moc [kW]")
 
     def humidifier_pump_voltage(self, X=0, Y=60):
         self.value_humidifier_pump_voltage = StringVar()
-        self.value_humidifier_pump_voltage.set(word()[312]+ word()[313] + word()[314])
+        self.value_humidifier_pump_voltage.set(self.solution[self.count().__next__()])
         self.entry_humidifier_pump_voltage = ttk.Entry(self.lframe_humidifier_pump,textvariable=self.value_humidifier_pump_voltage).grid(column=X, row=Y,padx=10, sticky=W)
 
         self.lba_humidifier_pump(X, Y, "Napięcie zasilania [V]")
@@ -1101,27 +1110,27 @@ class Application(Frame):
 
     def type_aggregat(self, X=0, Y=0):
         self.value_aggregat_typ = StringVar()
-        self.value_aggregat_typ.set(word()[315]+ word()[316] + word()[317])
+        self.value_aggregat_typ.set(self.solution[self.count().__next__()])
         self.entry_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_aggregat_typ).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Symbol")
 
 
     def voltage_aggregat(self, X=0, Y=20):
         self.value_voltage_aggregat = StringVar()
-        self.value_voltage_aggregat.set(word()[318]+ word()[319] + word()[320])
+        self.value_voltage_aggregat.set(self.solution[self.count().__next__()])
         self.entry_voltage_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_voltage_aggregat).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Napięcie zasilania[V]")
 
 
     def start_current_aggregat(self, X=0, Y=40):
         self.value_start_current_aggregat = StringVar()
-        self.value_start_current_aggregat.set(word()[321]+ word()[322] + word()[323])
+        self.value_start_current_aggregat.set(self.solution[self.count().__next__()])
         self.entry_start_current_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_start_current_aggregat).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Prąd rozruchu[A]")
 
     def max_current_aggregat(self, X=0, Y=60):
         self.value_max_current_aggregat = StringVar()
-        self.value_max_current_aggregat.set(word()[324]+ word()[325] + word()[326])
+        self.value_max_current_aggregat.set(self.solution[self.count().__next__()])
         self.entry_max_current_aggregat = ttk.Entry(self.lframe_aggregat, textvariable=self.value_max_current_aggregat).grid(column=X, row=Y, padx=10)
         self.lba_aggregat(X, Y + 10, txt="Max prąd [A]")
 
@@ -1142,7 +1151,7 @@ class Application(Frame):
     def mass(self, X=0, Y=10):
         self.lba_mass(X, Y, "masa [kg]")
         self.value_mass = StringVar()
-        self.value_mass.set(word()[327]+ word()[328] + word()[329])
+        self.value_mass.set(self.solution[self.count().__next__()])
         self.entry_mass = ttk.Entry(self.lframe_mass, textvariable=self.value_mass).grid(column=X, row=Y, padx=10, sticky=W)
 
     def mass_frame(self):
@@ -1159,17 +1168,17 @@ class Application(Frame):
 
 ########################################################################################################################
 
-    def print(self):
-
-        all_attribute = (self.__dict__)
-        target = re.compile(r'value', re.IGNORECASE)
-        collect= list()
-        for a in  all_attribute :
-            if 'value'in a:
-                collect.append(a)
-
-        print (collect)
-        print (len(collect))
+    # def print(self):
+    #
+    #     all_attribute = (self.__dict__)
+    #     target = re.compile(r'value', re.IGNORECASE)
+    #     collect= list()
+    #     for a in  all_attribute :
+    #         if 'value'in a:
+    #             collect.append(a)
+    #
+    #     print (collect)
+    #     print (len(collect))
 
 
     def get_method_SV(self):
@@ -1285,12 +1294,12 @@ class Application(Frame):
         self.export_max_current_aggregat = self.value_max_current_aggregat.get()
         self.export_mass = self.value_mass.get()
 
-    def print_2(self):
-        # for i in range(len(word())):
-        #     print(word()[i])
-
-
-        print (type(word))
+    # def print_2(self):
+    #     # for i in range(len(self.a)):
+    #     #     print(self.a[i])
+    #
+    #
+    #     print (type(word))
 
 
     ######################################################################################################################

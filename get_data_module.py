@@ -8,7 +8,6 @@ def get_data() :
     word = str()
     wordList = []
 
-
     for a in (LabList):
        #
        if a == '\n':
