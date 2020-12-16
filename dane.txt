@@ -12,14 +12,15 @@
 (?#value_supply_symbol_)
 (?<=Typ)[\w]+-\w\s?;
 (?<=Wielkość)\s*?\d*\d*\d*\d*?;
-(Strona obsługi)?(?(1)R);
+(?<=Strona[\s*?]obsługi[\s*?P])R|(?<=Strona[\s*?]obsługi[\s*?])L;
 (?#value_output_supply)
-;
+(?<=Przepływ[\s*?]powietrza)\s*?\d\d0*;
 (?#value_pressure_supply)
-;
+(?<=Ciśnienie[\s*?]dyspozycyjne)\s*?\d\d0*;
 (?#value_vent_supply_symbol)
-;
+(?<=Wentylator)..................................................................................................;
 (?#value_power_supply)
+;
 (?#value_current_supply)
 ;
 (?#value_rotation_supply)

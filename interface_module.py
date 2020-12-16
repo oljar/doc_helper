@@ -134,7 +134,7 @@ class Application(Frame):
 
         self.value_supply_symbol = StringVar()
 
-        self.value_supply_symbol.set(self.solution[self.count().__next__()]+' ' + self.solution[self.count().__next__()]+' '+ self.solution[self.count().__next__()])
+        self.value_supply_symbol.set(self.solution[self.count().__next__()]+' ' + self.solution[self.count().__next__()]+' '+ self.solution[self.count().__next__()].upper())
 
         self.entry_perf_supply = ttk.Entry(self.lframe_supply, textvariable=self.value_supply_symbol).grid(column=X, row=Y, padx=10)
 
