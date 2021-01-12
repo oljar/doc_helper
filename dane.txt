@@ -18,9 +18,9 @@
 (?#value_pressure_supply)
 (?<=Ciśnienie[\s*?]dyspozycyjne)\s*?\d\d0*;
 (?#value_vent_supply_symbol)
-(?<=Wentylator)..................................................................................................;
+EVOT\s*?\d*?\s?VF1\s*?EC;
 (?#value_power_supply)
-;
+(?<=([Wywiew.*filtr]nazwa))...............;
 (?#value_current_supply)
 ;
 (?#value_rotation_supply)

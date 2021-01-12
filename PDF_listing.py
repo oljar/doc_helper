@@ -3,7 +3,7 @@ from tkinter import messagebox
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.pdfinterp import PDFResourceManager
-from pdfminer.pdfpage import PDFPage
+from pdfminer.pdfinterp import PDFPageInterpreter
 
 
 import os
@@ -126,6 +126,7 @@ class WorkThread(threading.Thread):
         for i in lista_plikow:
 
 
+
                 pdf_path = os.path.join(entry02.get(), i)
                 self.next_page=0
 
@@ -145,7 +146,7 @@ class WorkThread(threading.Thread):
                         pass
 
 
-                    for page in PDFPage.get_pages(fh,
+                    for page in PDFPageInterpreter.get_pages(fh,
 
                                                           caching=True,
                                                           check_extractable=True):
