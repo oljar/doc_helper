@@ -21,11 +21,11 @@ class Application(Frame):
         self.identity_frame()
         self.supply_frame()
         self.vent_supply_frame()
-
         self.exhaust_frame()
+        self.vent_exhaust_frame()
         self.heater_frame()
         self.cooler_frame()
-        self.vent_exhaust_frame()
+
 
         self.pre_filter_supply_01_frame()
         self.pre_filter_supply_02_frame()
@@ -235,7 +235,7 @@ class Application(Frame):
 
     def performance_exhaust(self, X=0, Y=0):
         self.value_exhaust_symbol = StringVar()
-        self.value_exhaust_symbol.set(self.solution[self.count().__next__()])
+        self.value_exhaust_symbol.set(self.solution[self.count().__next__()]+' '+(self.solution[self.count().__next__()])+' '+(self.solution[self.count().__next__()]).upper());
         self.entry_perf_exhaust = ttk.Entry(self.lframe_exhaust, textvariable=self.value_exhaust_symbol).grid(column=X, row=Y, padx=10)
         self.lba_exhaust(X, Y, txt="Wykonanie - symbol")
 
@@ -269,7 +269,7 @@ class Application(Frame):
 
     def type_vent_exhaust(self, X=0, Y=0):
         self.value_vent_exhaust_symbol = StringVar()
-        self.value_vent_exhaust_symbol.set(self.solution[self.count().__next__()])
+        self.value_vent_exhaust_symbol.set(self.solution[self.count().__next__()] )
         self.entry_perf_exhaust = ttk.Entry(self.lframe_vent_exhasut, textvariable=self.value_vent_exhaust_symbol).grid(column=X, row=Y, padx=10)
         self.lba_vent_exhaust(X, Y+10, txt="Symbol" )
 

@@ -11,7 +11,7 @@
 ;
 (?#value_supply_symbol_)
 (?<=Typ)[\w]+-\w\s?;
-(?<=Wielkość)\s*?\d*\d*\d*\d*?;
+(?<=Wielkość)\s*?\d*\d*\d*\d*\d*?;
 (?<=Strona[\s*?]obsługi[\s*?P])R|(?<=Strona[\s*?]obsługi[\s*?])L;
 (?#value_output_supply)
 (?<=Przepływ[\s*?]powietrza)\s*?\d\d0*;
@@ -20,35 +20,37 @@
 (?#value_vent_supply_symbol)
 EVOT\s*?\d*?\s?VF1\s*?EC;
 (?#value_power_supply)
-(?<=([Wywiew.*filtr]nazwa))...............;
+(?<=(Moc silników wentylatorów))\s*?\dd?\.+?\dd?;
 (?#value_current_supply)
-;
+(?<=(Prąd całkowity wentylatorów))\s*?\dd?\.+?\dd?;
 (?#value_rotation_supply)
 ;
 (?#value_voltage_supply)
-;
+230;
 (?#value_frequency_supply)
-;
+50;
 (?#value_exhaust_symbol)
-;
+(?<=Typ)[\w]+-\w\s?;
+(?<=Wielkość)\s*?\d*\d*\d*\d*?\d*?;
+(?<=Strona[\s*?]obsługi[\s*?P])R|(?<=Strona[\s*?]obsługi[\s*?])L;
 (?#value_output_exhaust)
-;
+(?<=Przepływ[\s*?]powietrza...)\s*?\d\d0*|(?<=Przepływ[\s*?]powietrza....)\s*?\d\d0*;
 (?#value_pressure_exhaust)
-;
+(?<=Ciśnienie[\s*?]dyspozycyjne...)\s*?\d\d0*|(?<=Ciśnienie[\s*?]dyspozycyjne....)\s*?\d\d0*;
 (?#value_vent_exhaust_symbol)
-;
+EVOT\s*?\d*?\s?VF1\s*?EC;
 (?#value_power_vent_exhaust)
-;
+(?<=(Moc silników wentylatorów))\s*?\dd?\.+?\dd?;
 (?#value_current_vent_exhaust)
-;
+(?<=(Prąd całkowity wentylatorów...))\s*?\dd?\.+?\dd?|(?<=(Prąd całkowity wentylatorów....))\s*?\dd?\.+?\dd?;
 (?#value_rotation_vent_exhaust)
 ;
 (?#value_voltage_vent_exhaust)
-;
+230;
 (?#value_frequency_vent_exhaust)
-;
+50;
 (?#value_heater_symbol)
-;
+(?<=Nagrzewnica wodnaNazwa)EVOT_\d*.*(?<=_EU);
 (?#value_heater_water_01_in)
 ;
 (?#value_heater_01_water_out)
@@ -220,4 +222,7 @@ EVOT\s*?\d*?\s?VF1\s*?EC;
 (?#value_max_cur_rent_aggregat)
 ;
 (?#value_mass)
+;
+;
+;
 ;
